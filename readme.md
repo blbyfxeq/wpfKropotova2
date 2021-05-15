@@ -15,7 +15,7 @@
   <tr>
     <br><br><td style="text-align: right; border: none; height: 20em;">
       Разработал:<br/>
-      Кропотова Юлия<br>
+      Колесников Дмитрий<br>
       Группа: И-21<br>
       Преподаватель:<br>
       Колесников Евгений Иванович
@@ -108,4 +108,4 @@
 # Вывод
 
 Мы научились работать и создавать WPF-приложения и компоновкой, создавать приложение WPF .NET Framework, исследовали контейнеры
-А так же Grid, StackPanel, WrapPanel
+А так же Grid, StackPanel, WrapPanel"# wpfKolesnikov" 
