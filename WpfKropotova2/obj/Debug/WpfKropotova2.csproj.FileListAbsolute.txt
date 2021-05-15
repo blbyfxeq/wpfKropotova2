@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\WpfKropotova2.csprojAssemblyReference.cache
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\MainWindow.g.cs
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\App.g.cs
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\WpfKropotova2_MarkupCompile.cache
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\WpfKropotova2_MarkupCompile.lref
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\bin\Debug\WpfKropotova2.exe.config
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\bin\Debug\WpfKropotova2.exe
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\bin\Debug\WpfKropotova2.pdb
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\MainWindow.baml
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\WpfKropotova2.g.resources
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\WpfKropotova2.Properties.Resources.resources
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\WpfKropotova2.csproj.GenerateResource.cache
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\WpfKropotova2.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\WpfKropotova2.exe
+C:\Users\User\source\repos\WpfKropotova2\WpfKropotova2\obj\Debug\WpfKropotova2.pdb
