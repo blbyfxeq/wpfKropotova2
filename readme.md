@@ -10,12 +10,12 @@
   <tr>
     <td style="text-align: center; border: none; height: 15em;">
     <h2 style="font-size:3em;">Отчет</h2>
-      <h3>по лабораторной работе<br><br> по дисциплине "Основы алгоритмизации и программирования"<br><br> Тема:<b>"Каркас приложения. Модель данных. Привязка данных. Табличный вывод."<b> </h3></td>
+      <h3>по лабораторной работе<br><br> по дисциплине "Основы алгоритмизации и программирования"<br><br> Тема:<b>"Поиск, сортировка."<b> </h3></td>
   </tr>
   <tr>
     <br><br><td style="text-align: right; border: none; height: 20em;">
       Разработал:<br/>
-      Колесников Дмитрий<br>
+     Кропотова Юлия<br>
       Группа: И-21<br>
       Преподаватель:<br>
       Колесников Евгений Иванович
@@ -30,8 +30,8 @@
 <div style="page-break-after: always;"></div>
 
 # Цели и задачи:
- 1. Создать Модель данных
- 2. Создать Каркас приложения.
+ 1. TextBox (ввод строки для поиска) 
+ 2. RadioButton (сортировка по одному полю)
  3. Привязка данных. Табличный вывод
 
 
@@ -62,13 +62,20 @@ public List<CatBreed> CatBreedList { get; set; }
 IEnumerable<CatBreed> GetCatBreeds();
 ```
 
-2. Чтобы задать позицию элемента управления с привязкой к определенной ячейке Grid-а, в разметке элемента нужно прописать значения свойств Grid.Column и Grid.Row, тем самым указывая, в каком столбце и строке будет находиться элемент. Кроме того, если мы хотим растянуть элемент управления на несколько строк или столбцов, то можно указать свойства Grid.ColumnSpan и Grid.RowSpan, как в следующем примере:
-
+2. В разметке добавляем радиокнопки
     ```
-![Лабораторная](./screen2/Безимени4.png)
+![Лабораторная](./screen2/Безимени7.png)
 
 ```xml
- <Grid ShowGridLines="True">
+ <Window x:Class="WpfKropotova2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfKropotova2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition />
@@ -96,6 +103,46 @@ IEnumerable<CatBreed> GetCatBreeds();
         Orientation="Horizontal"
         Grid.Column="1"
         MinHeight="50">
+            <Label 
+    Content="Тип конфет:"
+    VerticalAlignment="Center"
+                />
+            <ComboBox
+    Name="TypeFilterComboBox"
+    SelectionChanged="TypeFilterComboBox_SelectionChanged"
+    VerticalAlignment="Center"
+    MinWidth="100"
+    SelectedIndex="0"
+    ItemsSource="{Binding SweetTypeList}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label 
+                Content="{Binding Title}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label 
+    Content="искать" 
+    VerticalAlignment="Center"/>
+            <TextBox
+    Width="200"
+    VerticalAlignment="Center"
+    x:Name="SearchFilterTextBox" 
+    KeyUp="SearchFilterTextBox_KeyUp"/>
+
+            <RadioButton
+    GroupName="Name"
+    Tag="1"
+    Content="по возрастанию"
+    IsChecked="True"
+    Checked="RadioButton_Checked"
+    VerticalAlignment="Center"/>
+            <RadioButton
+    GroupName="Name"
+    Tag="2"
+    Content="по убыванию"
+    Checked="RadioButton_Checked"
+    VerticalAlignment="Center"/>
         </WrapPanel>
         <DataGrid
     Grid.Row="1"
@@ -103,6 +150,30 @@ IEnumerable<CatBreed> GetCatBreeds();
     CanUserAddRows="False"
     AutoGenerateColumns="False"
     ItemsSource="{Binding SweetList}" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+            Header="Тип"
+            Binding="{Binding Type}"/>
+                <DataGridTextColumn
+            Header="Название"
+            Binding="{Binding Name}"/>
+                <DataGridTextColumn
+            Header="Производитель"
+            Binding="{Binding Manufacturer}"/>
+                <DataGridTextColumn
+            Header="Цена"
+            Binding="{Binding Price}"/>
+                <DataGridTextColumn
+            Header="Количество"
+            Binding="{Binding Count}"/>
+                <DataGridTextColumn
+            Header="Срок годности"
+            Binding="{Binding ShelfLife}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
+
 ```
 
 
@@ -130,4 +201,5 @@ IEnumerable<CatBreed> GetCatBreeds();
 # Вывод
 
 Мы научились работать и создавать WPF-приложения и компоновкой, создавать приложение WPF .NET Framework, исследовали контейнеры
-А так же Grid, StackPanel, WrapPanel"# wpfKolesnikov" 
+А так же Grid, StackPanel, WrapPanel"
+Добавили кнопки и сортировку по названию и доработали геттер списка конфет
